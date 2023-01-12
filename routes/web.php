@@ -26,7 +26,7 @@ Route::resource(
     App\Http\Controllers\CarController::class
 );
 Route::post(
-    'cars/{id}/todos', 
+    'cars/{id}/todos',
     [App\Http\Controllers\TodoController::class, 'store']
 )->name('todos.store');
 Route::delete(
