@@ -15,7 +15,7 @@ class Todo extends Model
 public function user(){  
     return $this->belongsTo('App\Models\User'); 
 }
-public function car(){  
+public function cars(){  
     return $this->belongsTo('App\Models\Car'); 
 }
 }

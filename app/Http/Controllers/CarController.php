@@ -97,7 +97,7 @@ class CarController extends Controller
             $request->image->move(public_path('images/cars'), $name);         
             $car->image = $name;
         }
-        $car->brand = $request->brand;     
+        $car->brand = $request->brand;
         $car->model = $request->model;
         $car -> save();
         return redirect('/cars')

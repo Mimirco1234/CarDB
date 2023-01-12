@@ -17,7 +17,7 @@ class TodoController extends Controller
         $request->validate([
             'description' => 'required'
         ]);      
-        $todo = new Todo;    
+        $todo = new Todo;
         $todo->description = $request->description;
         $todo->car_id = $car_id;
         $todo->user_id = Auth::user()->id;
@@ -27,11 +27,26 @@ class TodoController extends Controller
     public function index() {     
         return view('todos.list')->with('todos', Todo::all()); 
     }
+    public function edit(Todo $todo)
+    {
+        return view('cars.edit')->with('todo', $todo);
+    }
     public function destroy($todo_id)
     {
         $todo = Todo::Find($todo_id);
         $todo->delete();
         return redirect()->route('cars.show', $todo->car_id)
         ->with('success', 'comment deleted successfully.');
+    }
+    public function update(Request $request, Todo $todo){
+
+        $request -> validate([
+            'description' => 'required',
+            'car_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        return redirect('/cars')
+        ->with('success', 'Todo updated successfully');
     }
 }

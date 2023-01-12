@@ -13,4 +13,7 @@ class Car extends Model
     public function todos() {  
         return $this->hasMany('App\Models\Todo'); 
     }
+    public function gadgets(){  
+        return $this->belongsTo('App\Models\Gadget'); 
+    }
 }
