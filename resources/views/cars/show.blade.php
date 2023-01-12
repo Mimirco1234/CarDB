@@ -8,6 +8,14 @@
                     <td>{{ $car->brand }}</td><td>{{ $car->model }}</td>
                     <td><img class="w-25 img-thumbnail"src="{{ asset('images/cars/' . $car->image) }}"></td>
                     <td>
+                        @if($car->gadgets)
+    @foreach($car->gadgets as $gadget)
+        <div>
+            <select class="gadget gd-primary">
+                {{$gadget->nome}}
+            </select>
+        </div>
+    @endforeach
                         <div class="buttoncontainers">
                             <form action="{{route('cars.edit', $car)}}">
                                 <button type="submit" class="btn btn-primary">Edit</button>
