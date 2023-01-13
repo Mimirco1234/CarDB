@@ -7,6 +7,7 @@
         <form action="{{ route ('gadgets.destroy', $gadget) }}" method="POST">
             @csrf
             @method('DELETE')
+        <td><p>{{$gadget->nome}}</p>
             <button class="btn btn-danger">Delete</button>
         </form>
     </td>
