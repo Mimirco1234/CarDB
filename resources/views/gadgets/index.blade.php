@@ -8,7 +8,6 @@
             @csrf
             @method('DELETE')
             <button class="btn btn-danger">Delete</button>
-        <td><p>{{$gadget->nome}}</p>
         </form>
     </td>
     </div>
