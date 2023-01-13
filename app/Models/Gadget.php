@@ -15,6 +15,6 @@ class Gadget extends Model
     }
 
     public function cars() {
-        return $this->belongstoMany('App\Models\Car');
+        return $this->belongsToMany('App\Models\Car');
     }
 }

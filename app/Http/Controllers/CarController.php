@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Gadget;
 use Illuminate\Support\Facades\File;
 
 class CarController extends Controller
@@ -64,6 +65,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
+        $gadgets = $car->gadgets;
         return view('cars.show')->with('car', $car);
     }
 

@@ -6,6 +6,6 @@
         <input typre="text" name="model" placeholder="Model">
         <label for="image"class="mt-3">Image</label>     
         <input type="file"class="form-control"id="image"name="image">
-        <input type="submit">
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 @endsection

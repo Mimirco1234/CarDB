@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('car_gadget', function (Blueprint $table) {
             $table->id();
             $table->foreignId('car_id')->constrained('cars');
-            $table->foreignId('gadget_id')->costrained('gadgets'); 
+            $table->foreignId('gadget_id')->constrained('gadgets'); 
             $table->timestamps();
         });
     }

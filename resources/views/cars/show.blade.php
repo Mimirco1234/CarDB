@@ -8,13 +8,17 @@
                     <td>{{ $car->brand }}</td><td>{{ $car->model }}</td>
                     <td><img class="w-25 img-thumbnail"src="{{ asset('images/cars/' . $car->image) }}"></td>
                     <td>
-                            @foreach($car->gadgets as $gadget)
-                                <div>
-                                    <select class="gadget gd-primary">
-                                        {{$gadget->nome}}
-                                    </select>
-                                </div>
-                            @endforeach
+                        <form action="{{route('gadgets.create', $car->id)}}">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </form>
+                        
+                            <select name="nomes" id="nome">
+                                @foreach($car->gadgets as $gadget)
+                                    <option value='{{$gadget->id}}'>{{$gadget->nome}}</option>
+                                @endforeach    
+                            </select>   
+                                </select>
+                            </div>
                         <div class="buttoncontainers">
                             <form action="{{route('cars.edit', $car)}}">
                                 <button type="submit" class="btn btn-primary">Edit</button>

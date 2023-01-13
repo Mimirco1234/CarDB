@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('gadgets', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->foreignId('gadget_id')->costrained();
             $table->timestamps();
         });
     }

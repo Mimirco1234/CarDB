@@ -23,6 +23,6 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        return view('home')->with('gadgets', Gadge::all());
+        return view('home')->with('gadgets', Gadget::all());
     }
 }

@@ -6,6 +6,6 @@
 <input type="text" name="model" value="{{$car->model}}">
 <label for="image"class="mt-3">Image</label>     
 <input type="file"class="form-control"id="image"name="image">
-<button class="btn-primary"type="submit" width="73px" margin="3px">Submit</button>
+<button class="btn btn-primary" type="submit">Submit</button>
 </form>
 @endsection
