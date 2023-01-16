@@ -64,4 +64,14 @@ Route::post('cargadgets/store',
 
 Route::get('cargadgets/create',
 [App\Http\Controllers\CarGadgetController::class, 'create']
-)->name('cargadgets.create');
+)->name('cargadgets.create')
+
+
+
+
+
+
+
+
+
+
