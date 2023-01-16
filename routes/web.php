@@ -64,14 +64,27 @@ Route::post('cargadgets/store',
 
 Route::get('cargadgets/create',
 [App\Http\Controllers\CarGadgetController::class, 'create']
-)->name('cargadgets.create')
+)->name('cargadgets.create');
 
+//roles
 
+Route::resource(
+    'roles',
+    App\Http\Controllers\RoleController::class   
+);
 
+//permission
 
+Route::resource(
+    'permissions',
+    App\Http\Controllers\PermissionController::class
+);
 
+//permission_role
 
-
-
-
+Route::put(
+    'role-permission/admin/assign',
+    [RolePermissionController::class, 'assignPermissionToAdmin']
+);
+Route::post('/users/{userId}/assign-role/{roleId}', [UserController::class, 'assignRole'])->name('users.assignRole');
 

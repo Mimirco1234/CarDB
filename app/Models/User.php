@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -44,5 +45,10 @@ class User extends Authenticatable
     public function todos() {  
         return $this->hasMany('App\Models\Todo'); 
     }
-
+    public function gadgets() {  
+        return $this->hasMany('App\Models\Gadget'); 
+    }
+    public function roles(){
+        return $this->belongTo('App\Models\Role');
+    }
 }
